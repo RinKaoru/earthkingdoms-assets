@@ -1,0 +1,106 @@
+{
+  "server": {
+    "name": "EarthKingdoms",
+    "address": "play.earthkingdoms.com",
+    "port": 25565,
+    "version": "1.12.2",
+    "forgeVersion": "14.23.5.2860",
+    "description": "Serveur Minecraft moddé EarthKingdoms - Aventure et construction",
+    "website": "https://earthkingdoms.com",
+    "discord": "https://discord.gg/earthkingdoms"
+  },
+  "mods": {
+    "required": [
+      "forge-1.12.2-14.23.5.2860.jar",
+      "jei_1.12.2-4.16.1.302.jar"
+    ],
+    "optional": [
+      "OptiFine_1.12.2_HD_U_G5.jar",
+      "worldedit-forge-mc1.12-6.1.10.jar"
+    ],
+    "description": {
+      "jei": "Just Enough Items - Interface d'objets",
+      "optifine": "OptiFine - Optimisations graphiques (optionnel)",
+      "worldedit": "WorldEdit - Outils de construction (optionnel)"
+    }
+  },
+  "java": {
+    "minVersion": "1.8.0",
+    "maxVersion": "1.8.999",
+    "recommendedVersion": "1.8.0_392",
+    "memory": {
+      "min": 2048,
+      "max": 8192,
+      "default": 4096,
+      "recommended": 6144
+    },
+    "arguments": [
+      "-Xmx${memory}M",
+      "-Xms${memory}M",
+      "-XX:+UnlockExperimentalVMOptions",
+      "-XX:+UseG1GC",
+      "-XX:G1NewSizePercent=20",
+      "-XX:G1ReservePercent=20",
+      "-XX:MaxGCPauseMillis=50",
+      "-XX:G1HeapRegionSize=32M",
+      "-Dfml.ignoreInvalidMinecraftCertificates=true",
+      "-Dfml.ignorePatchDiscrepancies=true"
+    ]
+  },
+  "minecraft": {
+    "version": "1.12.2",
+    "type": "release",
+    "releaseTime": "2017-09-18T08:42:23+00:00",
+    "mainClass": "net.minecraft.launchwrapper.Launch",
+    "arguments": [
+      "--username=${auth_player_name}",
+      "--version=${version_name}",
+      "--gameDir=${game_directory}",
+      "--assetsDir=${assets_root}",
+      "--assetIndex=${assets_index_name}",
+      "--uuid=${auth_uuid}",
+      "--accessToken=${auth_access_token}",
+      "--userType=${user_type}",
+      "--tweakClass=net.minecraftforge.launchwrapper.Launch"
+    ]
+  },
+  "forge": {
+    "version": "14.23.5.2860",
+    "installer": "forge-1.12.2-14.23.5.2860-installer.jar",
+    "universal": "forge-1.12.2-14.23.5.2860-universal.jar",
+    "libraries": [
+      "net.minecraftforge:forge:1.12.2-14.23.5.2860:universal",
+      "net.minecraft:launchwrapper:1.12"
+    ]
+  },
+  "launcher": {
+    "name": "EarthKingdoms Launcher",
+    "version": "1.0.0",
+    "author": "EarthKingdoms Team",
+    "updateUrl": "https://github.com/RinKaoru/earthkingdoms-assets/releases/latest",
+    "supportUrl": "https://github.com/RinKaoru/earthkingdoms-launcher/issues"
+  },
+  "assets": {
+    "java": {
+      "filename": "java-portable.zip",
+      "extractTo": "java/",
+      "executable": "java/bin/java.exe"
+    },
+    "forge": {
+      "filename": "forge-installer.jar",
+      "installCommand": "java -jar forge-installer.jar --installServer"
+    },
+    "mods": {
+      "filename": "mods.zip",
+      "extractTo": "mods/",
+      "requiredFiles": [
+        "forge-1.12.2-14.23.5.2860.jar",
+        "jei_1.12.2-4.16.1.302.jar"
+      ]
+    },
+    "config": {
+      "filename": "server-config.json",
+      "description": "Configuration du serveur EarthKingdoms"
+    }
+  }
+}
